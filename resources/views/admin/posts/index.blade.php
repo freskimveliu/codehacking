@@ -34,7 +34,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="{{ url("admin/posts/$post->id") }}">
+                    <a href="{{ url("admin/posts/$post->id/edit") }}">
                         {{ $post->title ?? '' }}
                     </a>
                 </td>
