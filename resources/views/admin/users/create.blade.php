@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 
-    <h1>Create Users</h1>
+    <h1>Create User</h1>
     <form method="post" action="{{ url('/admin/users') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
