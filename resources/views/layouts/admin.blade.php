@@ -36,6 +36,10 @@
     body{
         padding-top:unset;
     }
+    .hover-img:hover {
+        transition: 1s;
+        transform: scale(2.5);
+    }
 </style>
 
 

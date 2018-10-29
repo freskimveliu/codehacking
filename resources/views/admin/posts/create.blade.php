@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 @section('content')
     <h1>Create Post</h1>
-    <form method="post" enctype="multipart/form-data" action="{{ url("admin/posts") }}">
+    <form method="post" enctype="multipart/form-data"
+          action="{{ url("admin/posts") }}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Title:</label>
@@ -10,8 +11,9 @@
         <div class="form-group">
             <label for="category_id">Category:</label>
             <select class="form-control" name="category_id" id="category_id">
-                <option value="1">Category 1</option>
-                <option value="2">Category 2</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">

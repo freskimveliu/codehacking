@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Requests\PostsCreateRequest;
 use App\Photo;
 use App\Post;
@@ -12,12 +13,13 @@ use Illuminate\Support\Facades\Session;
 class AdminPostsController extends Controller
 {
     public function index(){
-        $posts = Post::all();
+        $posts = Post::latest()->get();
         return view('admin.posts.index',compact('posts'));
     }
 
     public function create(){
-        return view('admin.posts.create');
+        $categories = Category::all();
+        return view('admin.posts.create',compact('categories'));
     }
 
     public function store(PostsCreateRequest $request){

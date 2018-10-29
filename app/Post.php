@@ -17,4 +17,8 @@ class Post extends Model
     public function photo(){
         return $this->belongsTo(Photo::class);
     }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
