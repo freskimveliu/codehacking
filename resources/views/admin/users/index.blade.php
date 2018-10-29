@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 @section('content')
+    @if(Session::has('deleted_user'))
+        <div class="alert alert-danger">
+            {{ session('deleted_user') }}
+        </div>
+    @endif
+
     <h1>Users</h1>
 
     <table class="table">

@@ -43,7 +43,15 @@
                     <label for="file">File:</label>
                     <input type="file" name="photo_id" id="file" class="" accept="image/*">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary col-sm-2">Submit</button>
+                </div>
+            </form>
+
+            <form class="pull-right" style="" action="{{ url("/admin/users/$user->id") }}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </div>
 
