@@ -39,6 +39,13 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function getGravatarAttribute(){
+        $hash  = md5(strtolower(trim($this->attributes['email']))) . "?d=mm";
+
+        return "http://www.gravatar.com/avatar/$hash";
+
+    }
+
     public function isAdmin(){
         if($this->role->name == 'Administrator' && $this->is_active){
             return true;

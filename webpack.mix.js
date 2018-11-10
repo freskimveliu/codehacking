@@ -25,7 +25,6 @@ mix.styles([
 
 mix.js([
     'public/js/libs/bootstrap.js',
-    'public/js/libs/jquery.js',
     'public/js/libs/metisMenu.js',
     'public/js/libs/sb-admin-2.js',
     'public/js/libs/scripts.js',

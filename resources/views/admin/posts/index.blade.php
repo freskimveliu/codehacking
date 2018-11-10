@@ -34,7 +34,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="{{ url("admin/posts/$post->id/edit") }}">
+                    <a href="{{ url("post/$post->slug") }}">
                         {{ $post->title ?? '' }}
                     </a>
                 </td>
@@ -43,4 +43,10 @@
         @endforeach
         </tbody>
     </table>
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-5">
+            {{ $posts->render() }}
+        </div>
+    </div>
 @endsection

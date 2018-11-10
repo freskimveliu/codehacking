@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+    @include('includes.responses')
     <h1>Create Post</h1>
     <form method="post" enctype="multipart/form-data"
           action="{{ url("admin/posts") }}">
@@ -22,7 +23,7 @@
         </div>
         <div class="form-group">
             <label for="body">Body:</label>
-            <textarea name="body" id="body" rows="5" class="form-control"></textarea>
+          @include('includes.tinyeditor')
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>

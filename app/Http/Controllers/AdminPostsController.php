@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class AdminPostsController extends Controller
 {
     public function index(){
-        $posts = Post::latest()->get();
+        $posts = Post::latest()->paginate(5);
         return view('admin.posts.index',compact('posts'));
     }
 
@@ -81,6 +81,12 @@ class AdminPostsController extends Controller
         session()->flash('errors','The post has been deleted');
 
         return redirect('/admin/posts');
+    }
+
+    public function post($slug){
+        $post       = Post::findBySlugOrFail($slug)->first();
+        $comments    = $post->comments()->get();
+        return view('post',compact('post','comments'));
     }
 
 }

@@ -14,11 +14,13 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
-    <link href="{{asset('css/libs/blog-post.css')}}" rel="stylesheet">
-    <link href="{{asset('css/libs/bootstrap.css')}}" rel="stylesheet">
+    {{--<link href="{{asset('css/libs/blog-post.css')}}" rel="stylesheet">--}}
+    {{--<link href="{{asset('css/libs/bootstrap.css')}}" rel="stylesheet">--}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />    <link href="{{asset('css/libs/metisMenu.css')}}" rel="stylesheet">
-    <link href="{{asset('css/libs/sb-admin-2.css')}}" rel="stylesheet">
-    <link href="{{asset('css/libs/styles.css')}}" rel="stylesheet">
+    {{--<link href="{{asset('css/libs/sb-admin-2.css')}}" rel="stylesheet">--}}
+    {{--<link href="{{asset('css/libs/styles.css')}}" rel="stylesheet">--}}
+
+    <link rel="stylesheet" href="{{ asset('css/libs.css') }}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -41,7 +43,7 @@
         transform: scale(2.5);
     }
 </style>
-
+@yield('styles')
 
 </head>
 
@@ -160,6 +162,9 @@
                             <li>
                                 <a href="{{ url('admin/posts/create') }}">Create Post</a>
                             </li>
+                            <li>
+                                <a href="{{ url('admin/comments') }}">All Comments</a>
+                            </li>
 
                         </ul>
                         <!-- /.nav-second-level -->
@@ -186,21 +191,16 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/media">All Media</a>
+                                <a href="{{ url('admin/media') }}">All Media</a>
                             </li>
 
                             <li>
-                                <a href="">Upload Media</a>
+                                <a href="{{ url("admin/media/create") }}">Upload Media</a>
                             </li>
 
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
-
-
-
-
 
 
                     <li>
@@ -364,13 +364,14 @@
 
 <!-- jQuery -->
 <script src="{{asset('js/libs/jquery.js')}}"></script>
-<script src="{{asset('js/libs/bootstrap.js')}}"></script>
+<script src="{{ asset('js/libs.js') }}"></script>
+{{--<script src="{{asset('js/libs/bootstrap.js')}}"></script>--}}
+{{----}}
+{{--<script src="{{asset('js/libs/metisMenu.js')}}"></script>--}}
+{{--<script src="{{asset('js/libs/sb-admin-2.js')}}"></script>--}}
+{{--<script src="{{asset('js/libs/scripts.js')}}"></script>--}}
 
-<script src="{{asset('js/libs/metisMenu.js')}}"></script>
-<script src="{{asset('js/libs/sb-admin-2.js')}}"></script>
-<script src="{{asset('js/libs/scripts.js')}}"></script>
-
-
+@yield('scripts')
 @yield('footer')
 
 
